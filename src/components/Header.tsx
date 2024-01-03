@@ -9,7 +9,7 @@ import {
 import { useState } from "react";
 
 export default function Header() {
-  const user = { _id: "", role: "" };
+  const user = { _id: "89823", role: "user" };
   const [isOpen, setIsOpen] = useState(false);
   const logOutHandler = () => {
     setIsOpen(false);
