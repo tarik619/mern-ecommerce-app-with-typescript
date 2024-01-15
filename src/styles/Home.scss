@@ -12,6 +12,7 @@
     background: url("../assets/mike-petrucci-c9FQyqIECds-unsplash.jpg")
       no-repeat center / cover;
   }
+
   > h1 {
     @include heading(1px);
     margin-top: 3rem;
@@ -34,9 +35,9 @@
     }
   }
 }
+
 .productcard {
   width: 18.75rem;
-  // overflow: hidden;
   height: 25rem;
   padding: 1rem;
   flex: none;

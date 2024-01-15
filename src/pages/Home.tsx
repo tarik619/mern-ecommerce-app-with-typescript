@@ -17,7 +17,7 @@ export default function Home() {
           name="Product 1"
           price={100}
           stock={10}
-          photo="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71Ezvxd+uiL._AC_UF894,1000_QL80_.jpg"
+          photo="https://img.freepik.com/free-psd/digital-device-mockup_53876-91374.jpg?w=996&t=st=1705252431~exp=1705253031~hmac=7e961433d73e42ee1d971394bb304ee0d6374fc9bb615e80593f9e520b1fb6b0"
           handler={addToCartHandler}
         />
       </main>

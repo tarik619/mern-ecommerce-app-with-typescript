@@ -23,7 +23,7 @@ export default function ProductCard({
     <div key={productId} className="productcard">
       <img src={photo} alt={name} />
       <p>{name}</p>
-      <p>{stock}</p>
+      {/* <p>{stock}</p> */}
       <span>${price}</span>
       <div className="">
         <button onClick={() => handler()}>
