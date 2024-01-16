@@ -8,14 +8,23 @@ import {
 } from "react-icons/fa";
 import { useState } from "react";
 import { User } from "../types/types";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
+import toast from "react-hot-toast";
 
 interface PropType {
   user: User | null;
 }
 export default function Header({ user }: PropType) {
   const [isOpen, setIsOpen] = useState(false);
-  const logOutHandler = () => {
-    setIsOpen(false);
+  const logOutHandler = async () => {
+    try {
+      await signOut(auth);
+      toast.success("Sign out successfully");
+      setIsOpen(false);
+    } catch (error) {
+      toast.error("Sign out fail");
+    }
   };
   return (
     <nav className="header">
