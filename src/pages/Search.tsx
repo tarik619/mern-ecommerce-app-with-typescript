@@ -18,7 +18,7 @@ export default function Search() {
 
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
-  const [maxPrice, setMaxPrice] = useState(1000000);
+  const [maxPrice, setMaxPrice] = useState(150000);
   const [category, setCategory] = useState("");
   const [page, setPage] = useState(1);
   // console.log(search);
@@ -38,8 +38,8 @@ export default function Search() {
 
   const addToCartHandler = () => {};
 
-  const isNextPage = true;
-  const isPrevPage = true;
+  const isNextPage = page > 1;
+  const isPrevPage = page < 4;
 
   if (isError) toast.error((error as CustomError).data.message);
   if (productIsError) toast.error((productError as CustomError).data.message);
@@ -62,7 +62,7 @@ export default function Search() {
           <input
             type="range"
             min={100}
-            max={1000000}
+            max={150000}
             value={maxPrice}
             onChange={(e) => setMaxPrice(Number(e.target.value))}
           />
