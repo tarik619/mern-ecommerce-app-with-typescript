@@ -7,6 +7,9 @@ import {
 import { CustomError } from "../types/api-types";
 import toast from "react-hot-toast";
 import { Skeleton } from "../components/Loader";
+import { CartItem } from "../types/types";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/reducer/cartReducer";
 
 export default function Search() {
   const {
@@ -35,8 +38,13 @@ export default function Search() {
     page,
     price: maxPrice,
   });
+  const dispatch = useDispatch();
 
-  const addToCartHandler = () => {};
+  const addToCartHandler = (cartItem: CartItem) => {
+    if (cartItem.stock < 1) return toast.error("Out of stock");
+    dispatch(addToCart(cartItem));
+    toast.success("Added to cart");
+  };
 
   const isNextPage = page > 1;
   const isPrevPage = page < 4;
