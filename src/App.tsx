@@ -18,6 +18,7 @@ const Cart = lazy(() => import("./pages/Cart"));
 const Shipping = lazy(() => import("./pages/Shipping"));
 const Login = lazy(() => import("./pages/Login"));
 const Orders = lazy(() => import("./pages/Orders"));
+const CheckOut = lazy(() => import("./pages/CheckOut"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const OrderDetails = lazy(() => import("./pages/OrderDetails"));
 
@@ -82,6 +83,7 @@ export default function App() {
             element={<Protectedroute isAuthenticated={user ? true : false} />}
           >
             <Route path="/shipping" element={<Shipping />} />
+            <Route path="/pay" element={<CheckOut />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/order/:id" element={<OrderDetails />} />
           </Route>
