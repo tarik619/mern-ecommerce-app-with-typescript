@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { StatsResponse } from "../../types/api-types";
 
 export const dashboardApi = createApi({
   reducerPath: "dashboardApi",
@@ -6,7 +7,7 @@ export const dashboardApi = createApi({
     baseUrl: `${import.meta.env.VITE_SERVER}/api/dashboard/`,
   }),
   endpoints: (builder) => ({
-    stats: builder.query<string, string>({
+    stats: builder.query<StatsResponse, string>({
       query: (id) => `stats?id=${id}`,
     }),
     pie: builder.query<string, string>({

@@ -76,7 +76,7 @@ export type Stats = {
   categoryCount: Record<string, number>[];
   changePercent: CountAndChange;
   count: CountAndChange;
-  chart: {
+  charts: {
     order: number[];
     revenue: number[];
   };
@@ -84,5 +84,5 @@ export type Stats = {
     male: number;
     female: number;
   };
-  latestTransaction: LatestTransaction[];
+  latestTransactions: LatestTransaction[];
 };
